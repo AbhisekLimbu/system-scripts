@@ -1,0 +1,7 @@
+What is File Automation?
+-It’s using scripts to:
+-Organize files
+-Rename or batch-edit them
+-Clean up old files
+-Back up directories
+-Trigger actions based on file types or dates
