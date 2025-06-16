@@ -1,0 +1,108 @@
+1.shebang : !#/bin/bash
+- tells the OS to use Bash interpreter to run the scripts. 
+1. # : used for comments.
+2. Varaibles: name : "abhisek"
+3. use Varaibles : echo, "hi, ${name}"
+4. conditions:
+    1. if statement
+        if["$name"=Abhisek];then
+            echo "abhisek"
+        fi
+        note : use -eq, -ne, -lt, -gt for numbers.
+
+
+    2. if else:
+        if["$age" -ge 18] then:
+            echo "adult"
+        else:
+            echo "minor"
+        fi
+
+
+    3. elif(else if):
+        if["$age" -ge -lt 18]then;
+            echo "minor"
+        elif["$age" -lt 60]then;
+            echo "adult"
+        else:
+            echo "senior"
+        fi
+
+    
+5. loops
+    1. for loops in range.
+        for i in {1...5};do
+            echo "loop ${i}"
+        done
+
+    2. for loops in file list:
+        for file in *.txt;do 
+            echo "found: $file"
+        done
+
+    3. while loops
+        counts = 1
+        while[$counts -le 5]; do
+            echo "count is $count"
+            ((counts++))
+
+        done
+
+6. functions: useable codes. 
+    greets(){
+        echo "hello, $1"
+    }
+
+    greets "abhisek"
+
+
+7. user input :
+
+     read -p "enter name:" $username
+     echo "Hi, $username"
+     note: read: waits for input
+     -p : promts
+
+8.  files and directories
+
+    1. check if file exists.
+        if [ -f "file.txt"]; then
+            echo "FILE FOUND"
+        fi
+    2. check if a directories exist
+        if [ -d  "myfolder"];then
+            echo "DIRECTORY EXIST"
+        fi
+
+9. Arthematic 
+
+    integer math 
+        a = 5
+        b = 6
+        total = $((a+b))
+
+        we can use +, -, *, /, %. ((use (())for Arthematic context))
+
+
+19. case statement
+     read -p "chose (a/b:" $choice)
+     case $choice in
+        a) echo "you chose A";;
+        b) echo "you choosed B";;
+        *) echo "Invalid";;
+
+    esac
+
+
+
+
+| Test      | Meaning         |
+| --------- | --------------- |
+| `-e file` | Exists          |
+| `-f file` | Is regular file |
+| `-d dir`  | Is a directory  |
+| `-r file` | Readable        |
+| `-w file` | Writable        |
+| `-x file` | Executable      |
+
+
